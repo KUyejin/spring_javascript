@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+						
+			<p>현재시간이 궁금하다면? 클릭하세요</p>	
+			<button onclick="myFunction()">Click</button>					
+		    
+	    <script>
+									
+		    var date = new Date();
+		        //document.write(date + "<br>" ); 
+		   
+		    // date Object를 받아오고 
+		    
+		    var year = date.getFullYear();
+		    console.log("year: " + year);		
+		    
+		    var month = date.getMonth() + 1;
+		    console.log("month: " + month);		
+		    // 달을 받아옵니다 
+		    
+		    var clockDate = date.getDate();
+		    // 몇일인지 받아옵니다 
+		   
+		    		    
+		    var arrayWeek = ['일', '월', '화', '수', '목', '금', '토'];		
+		    // 요일은 숫자형태로 리턴되기때문에 미리 배열을 만듭니다. 
+		    
+		    var week = date.getDay(); 
+		        week = arrayWeek[week];
+		    console.log("week : " + week );
+		    // 요일을 받아옵니다. 
+		    
+		    var hours = date.getHours();
+		    console.log("hours: " + hours);
+		    // 시간을 받아오고 
+		    
+		    var minutes = date.getMinutes();
+		    console.log("minutes: " + minutes);
+		    // 분도 받아옵니다.
+		    
+		    var seconds = date.getSeconds();
+		    console.log("seconds: " + seconds);
+		    // 초까지 받아온후 
+		    
+		    
+		    //document.write(year +"년 " + month + "월 "+ clockDate + "일 "+   hours+ "시 " + minutes+ "분 " + seconds + "초 ");
+		    //웹출력
+		    
+		    //alert(year +"년 " + month + "월 "+ clockDate + "일 "+   hours+ "시-" + minutes+ "분-" + seconds + "초"); 
+		    //경고창 출력
+		    
+		    //$("#NowTime").html(timeStr);
+		    
+ 	       function myFunction() {
+			  var t = document.createTextNode(year +"년 " + month + "월 "+ clockDate + "일 " + week +"요일 "+ hours+ "시 " + minutes+ "분 " + seconds + "초 " );
+			  //var t = document.createTextNode(date);
+			  
+			  var br = document.createElement("br");
+			  document.body.appendChild(br);
+			  
+			  document.body.appendChild(t);
+			  			  
+		  
+			}
+ 	       
+ 	      
+	</script>
+					
+
+	</head>
+	
+	
+	
+	<body>
+		
+	<!-- 	
+	<p id="realTimer"></p>
+
+
+		<script type="text/javascript">
+		
+		var tag = document.getElementById( "realTimer" ); 
+		
+		     tag.innerHTML = timer(); 
+		
+		setInterval ( function() { tag.innerHTML = timer(); } , 1000 ); 
+		
+		</script>	 
+		-->
+			
+	
+	
+	</body>
+</html>
